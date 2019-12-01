@@ -11,13 +11,30 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 
 | Day | Name | Rust | Python | Typescript | 
 |:---:|:---|:---:|:---:|:---:|
-| 01 | [The Tyranny of the Rocket Equation][day01] | ✓✓ |  | |
+| 01 | [The Tyranny of the Rocket Equation][day01] | ✓✓ | ✓✓ | |
 
 # Test Solutions
 
 ## Rust
 1. Enter rust directory `cd rust`
 2. Run cargo with input passed in stdin `cargo run d1 < input.txt`
+3. You can also test your input via stdin ended with EOF signal
+```
+    cargo run d1
+        10
+        20
+        30
+        [CTRL+D]
+```
+
+## Python
+1. Run python code with input.txt as a first argument
+```
+    python3 python/d1.py inputs/1.txt
+```
+
+## Typescript
+
 
 
 [day01]: https://adventofcode.com/2019/day/1
