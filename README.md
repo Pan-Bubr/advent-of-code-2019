@@ -9,11 +9,15 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 
 # Progress
 
-| Day | Name | Typescript | Rust | Python |
+| Day | Name | Rust | Python | Typescript | 
 |:---:|:---|:---:|:---:|:---:|
-| 01 | [The Tyranny of the Rocket Equation][day01] |  |  |
+| 01 | [The Tyranny of the Rocket Equation][day01] | ✓✓ |  | |
 
 # Test Solutions
+
+## Rust
+1. Enter rust directory `cd rust`
+2. Run cargo with input passed in stdin `cargo run d1 < input.txt`
 
 
 [day01]: https://adventofcode.com/2019/day/1
