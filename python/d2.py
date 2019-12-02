@@ -16,6 +16,7 @@ def calculate(orders):
             second_digit_address = orders[i+2]
             destination = orders[i+3]
             orders[destination] = orders[first_digit_address] + orders[second_digit_address]
+            print("A", first_digit_address, second_digit_address, orders[destination])
             i += 4
         elif orders[i] == 2:
             first_digit_address = orders[i+1]
@@ -23,6 +24,7 @@ def calculate(orders):
             destination = orders[i+3]
             i += 4
             orders[destination] = orders[first_digit_address] * orders[second_digit_address]
+            print("M", first_digit_address, second_digit_address, orders[destination])
         else:
             break
     return orders[0]
@@ -39,15 +41,15 @@ print("[Part One] State of the computer: {solution}".format(
     solution=solution
 ))
 
-for i in range(100):
-    for j in range(100):
-        input = get_input()
-        orders = [int(i) for i in input.split(',')]
+# for i in range(100):
+#     for j in range(100):
+#         input = get_input()
+#         orders = [int(i) for i in input.split(',')]
         
-        orders[1] = i
-        orders[2] = j
-        if (calculate(orders) == 19690720):
-            print("[Part Two] State of the computer: noun={noun} verb={verb}, solution={solution}".format(
-                noun=i, verb=j, solution=100*i+j
-            ))
-            break
+#         orders[1] = i
+#         orders[2] = j
+#         if (calculate(orders) == 19690720):
+#             print("[Part Two] State of the computer: noun={noun} verb={verb}, solution={solution}".format(
+#                 noun=i, verb=j, solution=100*i+j
+#             ))
+#             break

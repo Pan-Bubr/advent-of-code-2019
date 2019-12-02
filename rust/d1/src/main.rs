@@ -1,6 +1,6 @@
 use std::io::{self, Read};
 
-fn main(){
+fn main() {
     let input = get_input();
 
     // Part 1
@@ -31,7 +31,7 @@ fn main(){
 
 fn get_input() -> String {
     let mut input = String::new();
-    let stdin = io::stdin(); 
+    let stdin = io::stdin();
     stdin.lock().read_to_string(&mut input).unwrap();
     return input;
 }
