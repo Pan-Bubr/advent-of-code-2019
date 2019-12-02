@@ -1,16 +1,20 @@
 import sys
 import math
 
+def get_input():
+    input_file = sys.argv[1]
+    f = open(input_file)
+    ret = f.read()
+    f.close()
+    return ret
+
 def calculate_fuel(mass):
     fuel = float(mass) / 3.0
     fuel = math.floor(fuel)
     fuel -= 2
     return fuel if fuel > 0 else 0
 
-input_file = sys.argv[1]
-f = open(input_file)
-input = f.read()
-f.close()
+input = get_input()
 
 total_fuel = 0
 
