@@ -12,6 +12,8 @@ class Pointer:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+    def value(self):
+        return "{x}/{y}".format(x=self.x, y=self.y)
 
 class Instruction:
     def __init__(self, instruction):
@@ -34,25 +36,25 @@ class Step:
 class Plane:
     steps = 0
     crossings = []
-    def __init__(self, size):
-        self.size = size
-        self.plane = [[None for y in range(size)] for x in range(size)]
+    def __init__(self):
+        self.plane = {}
     
     def print(self):
         for i in self.plane:
             print(i)
 
-    def draw_cell(self, x, y, mark):
+    def draw_cell(self, mark):
+        value = self.pointer.value()
         self.steps += 1
         if mark == "A":
-            if self.plane[y][x] == None:
-                self.plane[y][x] = Step(x - self.size/2, y - self.size/2, self.steps, 0)
+            if value not in self.plane:
+                self.plane[value] = Step(self.pointer.x, self.pointer.y, self.steps, 0)
         elif mark == "B":
-            if self.plane[y][x] == None:
-                self.plane[y][x] = Step(x - self.size/2, y - self.size/2, 0, self.steps)
-            elif self.plane[y][x].A_steps != 0:
-                self.plane[y][x].B_steps = self.steps
-                self.crossings.append(self.plane[y][x])
+            if value not in self.plane:
+                self.plane[value] = Step(self.pointer.x, self.pointer.y, 0, self.steps)
+            elif self.plane[value].A_steps != 0:
+                self.plane[value].B_steps = self.steps
+                self.crossings.append(self.plane[value])
     
     def draw_line(self, i, mark):
         for _ in range(i.steps):
@@ -64,12 +66,11 @@ class Plane:
                 self.pointer.y -= 1
             elif i.direction == "D":
                 self.pointer.y += 1
-            self.draw_cell(self.pointer.x, self.pointer.y, mark)
+            self.draw_cell(mark)
 
     def draw_wire(self, instructions, mark):
         self.steps = 0
-        self.manhattan = 0
-        self.pointer = Pointer(int(self.size/2), int(self.size/2))
+        self.pointer = Pointer(0, 0)
         for i in instructions:
             self.draw_line(i, mark)
 
@@ -82,7 +83,7 @@ instructions = input.split('\n')
 instructionListA = [Instruction(i) for i in instructions[0].split(',')]
 instructionListB = [Instruction(i) for i in instructions[1].split(',')]
 
-plane = Plane(25000)
+plane = Plane()
 
 plane.draw_wire(instructionListA, "A")
 plane.draw_wire(instructionListB, "B")
