@@ -12,8 +12,9 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | Day | Name | Rust | Python | Typescript | 
 |:---:|:---|:---:|:---:|:---:|
 | 01 | [The Tyranny of the Rocket Equation][day01] | ✓✓ | ✓✓ | |
-| 01 | [1202 Program Alarm][day02] | ✓✓ | ✓✓ | |
-| 01 | [Crossed Wires][day03] | ✓✓ | ✓✓ | |
+| 02 | [1202 Program Alarm][day02] | ✓✓ | ✓✓ | |
+| 03 | [Crossed Wires][day03] | ✓✓ | ✓✓ | |
+| 04 | [Secure Container][day04] | ✓✓ |  | |
 
 # Test Solutions
 
