@@ -18,8 +18,8 @@ fn main() {
     for num in range {
         if check_digit(num, false) {
             part_one.push(num);
-        } 
-        
+        }
+
         if check_digit(num, true) {
             part_two.push(num);
         }
