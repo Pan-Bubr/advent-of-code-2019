@@ -89,7 +89,11 @@ fn solve(program_input: i32) -> i32 {
             }
             Opcode::Output => {
                 let output = *ops.get(i + 1).unwrap() as usize;
-                let value = if immediate_mode.0 { output as i32 } else { ops[output] };
+                let value = if immediate_mode.0 {
+                    output as i32
+                } else {
+                    ops[output]
+                };
 
                 program_output = value;
                 i += 2;

@@ -16,7 +16,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 03 | [Crossed Wires][day03]                      | ✓✓ | ✓✓ | |
 | 04 | [Secure Container][day04]                   | ✓✓ |    | |
 | 05 | [Sunny with a Chance of Asteroid][day05]    | ✓✓ |    | |
-| 06 | [Universal Orbit Map][day06]                |    |    | |
+| 06 | [Universal Orbit Map][day06]                | ✓  |    | |
 | 07 | [Amplification Circuit][day07]              |    |    | |
 | 08 | [Space Image Format][day08]                 |    |    | |
 
